@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   
+    <title>Adm-Modal</title>
+    <style>
+        body{
+            background-color: #e5e5e5;
+        }
+        :root{
+            --primary-color: #4298C3;
+            --dark1-color: white;
+            --dark2-color: wheat;
+        }
+       
+        .box{
+            background-color: white;
+            border-radius: 13px;
+            box-shadow: 0px 2px 2px 0px #0000001A;
+        }
+        h6{
+            margin-block-start: 0em;
+    margin-block-end: 0em;
+        }
+        h5{
+            margin-bottom: 0rem;
+        }
+       .box{
+          
+           min-height: 60vh;
+           
+       }
+       .btn-1{
+color: #666666;
+border: 1px solid #F2F2F2;
+background-color: white;
+       }
+       .btn-2{
+        color: #FF0042;
+        border: 1px solid #F2F2F2;
+        background-color: white;
+
+       }
+       .a{
+           color: #AAAAAA;
+       }
+       .p-1{
+           color: #666666;
+       }
+       .country{
+           text-align: end;
+           /* font-family: Roboto; */
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: 12px;
+letter-spacing: 0em;
+/* text-align: left; */
+margin-bottom: 2px;
+
+       }
+       .title-section{
+           border-top-right-radius: 13px;
+           border-top-left-radius:13px ;
+           background: linear-gradient(270.04deg, #FFFAE0 0.03%, rgba(240, 255, 246, 0) 99.96%),
+linear-gradient(0deg, #FFC0C0, #FFC0C0);
+padding-left:1.5rem ;
+padding-right: 0.5rem;
+       }
+       .user-info img{
+        width: 35px;
+    height: 41px;
+
+       }
+       .user-info-sub{
+           margin-left: 0.7rem;
+       }
+       .patient-id{
+        background: #FFF6EF;
+
+       }
+       .b img{
+           height: 19px;
+           width: 18px;
+       }
+       .shadow-box{
+        box-shadow: 0px 2px 2px 0px #0000001A;
+
+       }
+       .user-info-sub h5{
+        /* font-family: Roboto; */
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 14px;
+letter-spacing: 0em;
+text-align: left;
+color: #00252F;
+margin-bottom: 0.5rem;
+    margin-top: 0.2rem;
+
+       }
+       .user-info-sub h6{
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: 12px;
+letter-spacing: 0em;
+text-align: left;
+color: #00252F8F;
+
+
+       }
+       .journey-1{
+           padding-right: 2rem;
+           padding-left: 3rem;
+       }
+       .head-adm-journey{
+        font-family: sans-serif;
+font-size: 18px;
+font-style: thin;
+font-weight: 100;
+line-height: 21px;
+letter-spacing: 0em;
+text-align: left;
+color: #00252f;
+       }
+       .journey-section{
+           background-color: #e5e5e5;
+           background-color: white;
+           border-top-right-radius: 9px;
+           border-top-left-radius:9px ;
+           border-bottom-right-radius: 13px;
+           border-bottom-left-radius:13px ;
+          
+       }
+
+
+       .p{
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.5;
+            line-height: 12px;
+            /* opacity: 0.7; */
+        }
+        .timeline{
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0px;
+        }
+        .timeline-body{
+            position: relative;
+            /* background-color: var(--dark1-color); */
+            margin-left: 100px;
+            border-radius: 0 8px 8px 0;
+            padding: 5px 0;
+        }
+        .timeline-body:after{
+             content: '';
+            width: 1px;
+            height: 83%;
+            background-color: #8AA9B53D
+;
+            position: absolute;
+            left: -4px;
+            top: 46px; 
+
+            /* border: 1px solid #8AA9B53D */
+        }
+        .timeline-item{
+            position: relative;
+        }
+        .timeline-item:after{
+            /* content: '';
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            background-color: var(--dark1-color);
+            position: absolute;
+            left: -16px;
+            top: 0px;
+            z-index: 9; */
+               content: "\2713";
+    width: 44px;
+    color: white;
+    height: 44px;
+    font-weight: 400;
+    border-radius: 50%;
+    border: 4px solid #3AB748;
+    background-color: var(--dark1-color);
+    position: absolute;
+    left: -28px;
+    top: 0px;
+    z-index: 9;
+    background: #3AB748;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 21px;
+        }
+        .last-item:after{
+            content: "\f236";
+            font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f236";
+            color: #88888888;
+            background: #ffffff;
+            border: 4px solid #FFFFFF;
+            box-shadow: 0px 1px 6px 0px #0000001A;
+
+        }
+        .second-last:after{
+            font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f487";
+            color: #88888888;
+            background: #ffffff;
+            border: 4px solid #FFFFFF;
+            box-shadow: 0px 1px 6px 0px #0000001A;
+
+        }
+        .time{
+            position: absolute;
+            left: -85px;
+            top: 83%;
+            font-weight: 400;
+            font-size: 13px;
+            color: #888888;
+        }
+        .content{
+            margin: 25px;
+            padding-bottom: 18px;
+            /* border-bottom: 1px dashed #545; */
+        }
+        .content-2{
+            margin: 32px;
+            margin: 32px 23px 68px 28px;
+        }
+        .title{
+            font-weight: 500;
+            margin-bottom: 7px;
+            font-size: 17px;
+            line-height: 14.06px;
+            color: #555555;
+        }
+        .title span{
+            color: #616161;
+            font-size: 12px;
+            margin-left: 0.4rem;
+        }
+        .icon-6 img{
+            height: 15.5px;
+    /* width: 19px; */
+}
+.elasped-time{
+    font-family: Roboto;
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+color: #888888;
+padding-right: 0.5rem;
+}
+.et-1{
+    font-family: Roboto;
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: 12px;
+color: #FF0042;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.doctor{
+    font-family: Roboto;
+font-size: 10px;
+font-style: normal;
+font-weight: 400;
+line-height: 12px;
+letter-spacing: 0em;
+text-align: left;
+color: #777777;
+}
+.modal-body{
+    padding: 0rem !important;
+}
+.btn{
+    margin: 0 auto;
+}
+.modal-header{
+    border-bottom: 0px solid black;
+}
+    </style>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+     </head>
+  <body>
+    <button type="button" class="btn btn-primary mt-4 d-flex justify-content-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Click Here
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel"></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="modal-1">
+                    <div class="container ">
+                        <div class="box">
+              <div class="title-section d-flex justify-content-between pb-2 pt-2">
+                  <div class="user-info d-flex">
+                      <div>
+                          <img src="male 1.svg" alt="">
+                      </div>
+                      <div>
+                          <div class="user-info-sub">
+                              <h5>ETHAN WONG</h5>
+                              <h6>Male, 60 yrs (Senior Citizen)</h6>
+                          </div>
+                      </div>
+                  </div>
+                  <div>
+              <div class="country">Resident</div>
+              <button class="btn-1">Malaysia</button>
+                  </div>
+              </div>
+              
+              <div class="row" style="padding-right: 1.5rem;padding-left: 1.5rem;">
+                  <div class="col p-0 shadow-box m-md-2">
+                      <div class="patient-card">
+                      <div class="patient-card-1 d-flex justify-content-between p-1">
+                          <div class="a">Patient ID</div>
+                          <div class="b"><img src="icon-1.svg" alt=""></div>
+                      </div>
+                      <div class="patient-id p-1">532144</div>
+                  </div>
+                  </div>
+                  <div class="col p-0 shadow-box m-md-2">
+                      <div class="patient-card">
+                      <div class="patient-card-1 d-flex justify-content-between p-1">
+                          <div class="a">Visit ID</div>
+                          <div class="b"><img src="icon-2.svg" alt=""></div>
+                      </div>
+                      <div class="patient-id p-1">2735678</div>
+                  </div>
+                  </div>
+                  <div class="col p-0 shadow-box m-md-2">
+                      <div class="patient-card">
+                      <div class="patient-card-1 d-flex justify-content-between p-1">
+                          <div class="a">Ward</div>
+                          <div class="b"><img src="icon-3.svg" alt=""></div>
+                      </div>
+                      <div class="patient-id p-1">Ward 2A</div>
+                  </div>
+                  </div>
+              </div>
+              <div class="row" style="padding-right: 1.5rem;padding-left: 1.5rem;">
+                  <div class="col p-0 shadow-box m-md-2">
+                      <div class="patient-card">
+                      <div class="patient-card-1 d-flex justify-content-between p-1">
+                          <div class="a">Bed (F5-102)</div>
+                          <div class="b"><img src="icon-4.svg" alt=""></div>
+                      </div>
+                      <div class="patient-id p-1">Single Bed</div>
+                  </div>
+                  </div>
+                  <div class="col p-0 shadow-box m-md-2">
+                      <div class="patient-card">
+                      <div class="patient-card-1 d-flex justify-content-between p-1">
+                          <div class="a">Payor</div>
+                          <div class="b"><img src="icon-5.svg" alt=""></div>
+                      </div>
+                      <div class="patient-id p-1">AIA BHD (INDIVIDUAL)</div>
+                  </div>
+                  </div>
+                
+              </div>
+              <div class="journey-section">
+                  <div class="journey-1 d-flex justify-content-between pt-4">
+                      <div class="head-adm-journey">Admission Journey</div>
+                      <div class="journey-b d-flex">
+              <div class="elasped-time"> Elapsed Time</div>
+              <div><button class="btn-2 et-1">02:45</button></div>
+                      </div>
+                  </div>
+              
+              
+                  <div class="timeline">
+                      <div class="timeline-body">
+                           <div class="timeline-item">
+                              <p class="time">00:24</p>
+                              <div class="content">
+                                  <h2 class="title">Admission Request <span>Dec 06 2021 08:36 AM</span></h2>
+                                  <p class="p"> <span class="icon-6"><img src="icon-6.svg" alt=""></span>  Ratha AP</p>
+                              </div>
+                          </div>
+                          <div class="timeline-item">
+                              <p class="time">02:23</p>
+                              <div class="content">
+                                  <h2 class="title">Sent for IGL Approval <span>Dec 06 2021 09:00 AM</span></h2>
+                                  <p class="p"> <span class="icon-6"><img src="icon-6.svg" alt=""></span> Jim Chin</p>
+                              </div>
+                          </div>
+                          <div class="timeline-item">
+                              <p class="time">00:15</p>
+                              <div class="content">
+                                  <h2 class="title">Received IGL Approval <span>Dec 06 2021 11:23 AM</span></h2>
+                                  <p class="p"> <span class="icon-6"><img src="icon-6.svg" alt=""></span> Jim Chin</p>
+                              </div>
+                          </div>
+                          <div class="timeline-item">
+                              
+                              <div class="content">
+                                  <h2 class="title">Requested Bed Confirmation <span>Dec 06 2021 11:38 AM</span></h2>
+                                  <p class="p"> <span class="icon-6"><img src="icon-6.svg" alt=""></span> Jim Chin</p>
+                              </div>
+                          </div>
+                          <div class="timeline-item second-last">
+                             
+                              <div class="content content-2">
+                                  <h2 class="title">Admitted</h2>
+                                  </div>
+                          </div>
+                          <div class="timeline-item last-item">
+                              
+                              <div class="content content-2">
+                                  <h2 class="title">Accepted</h2>
+                              </div>
+                          </div>
+                         
+                      </div>
+                  </div>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              </div>
+              
+                        </div>
+                    </div>
+                   
+                </div>
+            
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"></button>
+              <button type="button" class="btn btn-primary"></button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    
+        
+    
+       <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
